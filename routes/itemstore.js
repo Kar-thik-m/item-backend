@@ -11,7 +11,7 @@ itemRouter.post("/create",async(req,res)=>{
    
     try{
      
-     const item=new model({...req.body,id:v4});
+     const item=new model({...req.body,id:v4()});
      await item.save();
          res.send({msg:' created '});
      }catch(err){
@@ -24,7 +24,7 @@ itemRouter.post("/create",async(req,res)=>{
      itemRouter.get('/electronic', async (req, res) => {
         try {
           
-          const products = await model.find({ itemType: 'Electronic' });
+          const products = await model.find({ itemType: 'electronic' });
           res.json(products);
         } catch (err) {
           console.error(err);
