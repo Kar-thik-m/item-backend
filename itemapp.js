@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/item',itemRouter);
-app.use("/api",authRouter);
+app.use("/user",authRouter);
 
 app.get('/',  (req, res)=> {
   res.send('item catalog');
